@@ -1,10 +1,8 @@
----
----
 <section class="py-24 bg-[#09090b] text-white border-t border-white/5">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <!-- Título y Texto -->
-    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+    <!-- Título y Texto con animación reveal -->
+    <div class="reveal text-center max-w-3xl mx-auto mb-16 space-y-4">
       <span class="text-xs uppercase tracking-widest text-[#639A2B] font-bold block">Instalaciones</span>
       <h2 class="text-3xl sm:text-5xl font-black font-heading tracking-tight">
         EL ESPACIO
@@ -14,34 +12,31 @@
       </p>
     </div>
 
-    <!-- Grilla de 3 imágenes para las instalaciones -->
+    <!-- Grilla de 3 imágenes para las instalaciones (Aparecen escalonadas) -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       
       <!-- Imagen 1 -->
-      <div class="relative h-80 rounded-2xl overflow-hidden bg-gray-900 border border-white/10 shadow-xl flex items-center justify-center group">
+      <div class="reveal relative h-80 rounded-2xl overflow-hidden bg-gray-900 border border-white/10 shadow-xl flex items-center justify-center group" style="transition-delay: 100ms;">
         <div 
           class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-80"
           style="background-image: url('/images/espacio-1.jpg');"
         ></div>
-
       </div>
 
       <!-- Imagen 2 -->
-      <div class="relative h-80 rounded-2xl overflow-hidden bg-gray-900 border border-white/10 shadow-xl flex items-center justify-center group">
+      <div class="reveal relative h-80 rounded-2xl overflow-hidden bg-gray-900 border border-white/10 shadow-xl flex items-center justify-center group" style="transition-delay: 250ms;">
         <div 
           class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-80"
           style="background-image: url('/images/espacio-2.jpg');"
         ></div>
-
       </div>
 
       <!-- Imagen 3 -->
-      <div class="relative h-80 rounded-2xl overflow-hidden bg-gray-900 border border-white/10 shadow-xl flex items-center justify-center group">
+      <div class="reveal relative h-80 rounded-2xl overflow-hidden bg-gray-900 border border-white/10 shadow-xl flex items-center justify-center group" style="transition-delay: 400ms;">
         <div 
           class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-80"
           style="background-image: url('/images/espacio-3.jpg');"
         ></div>
-
       </div>
 
     </div>

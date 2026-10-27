@@ -7,6 +7,7 @@ const services = [
     href: "/funcional-gimnasio",
     desktopSpan: "lg:col-span-3",
     tabletSpan: "md:col-span-6",
+    delay: "0ms",
   },
   {
     title: "Entrenamiento para fútbol",
@@ -14,6 +15,7 @@ const services = [
     href: "/entrenamiento-futbol",
     desktopSpan: "lg:col-span-3",
     tabletSpan: "md:col-span-6",
+    delay: "100ms",
   },
   {
     title: "Gimnasia para adultos mayores",
@@ -21,6 +23,7 @@ const services = [
     href: "/adultos-mayores",
     desktopSpan: "lg:col-span-3",
     tabletSpan: "md:col-span-6",
+    delay: "200ms",
   },
   {
     title: "Entrenamiento infantil (Kids)",
@@ -28,6 +31,7 @@ const services = [
     href: "/kids",
     desktopSpan: "lg:col-span-3",
     tabletSpan: "md:col-span-6",
+    delay: "300ms",
   },
   // Fila 2 (3 tarjetas más anchas en Desktop)
   {
@@ -36,6 +40,7 @@ const services = [
     href: "/yoga",
     desktopSpan: "lg:col-span-4",
     tabletSpan: "md:col-span-6",
+    delay: "100ms",
   },
   {
     title: "Masajes descontracturantes",
@@ -43,13 +48,15 @@ const services = [
     href: "/masajes",
     desktopSpan: "lg:col-span-4",
     tabletSpan: "md:col-span-6",
+    delay: "200ms",
   },
   {
     title: "Antropometría",
     image: "/images/antropometria.jpg",
     href: "/antropometria",
     desktopSpan: "lg:col-span-4",
-    tabletSpan: "md:col-span-12 md:max-w-xl md:mx-auto w-full", // En tablet ocupa el ancho o se centra prolija
+    tabletSpan: "md:col-span-12 md:max-w-xl md:mx-auto w-full",
+    delay: "300ms",
   },
 ];
 ---
@@ -58,15 +65,15 @@ const services = [
 <section class="py-24 bg-white text-gray-900 border-t border-gray-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <!-- Encabezado de la sección (Textos oscuros para fondo blanco) -->
+    <!-- Encabezado de la sección con animación reveal -->
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-      <div>
+      <div class="reveal">
         <span class="text-xs uppercase tracking-widest text-[#639A2B] font-bold block mb-2">Nuestras Actividades</span>
         <h2 class="text-3xl sm:text-5xl font-black font-heading tracking-tight text-[#17239C]">
           ENCONTRÁ TU FORMA <br />DE ENTRENAR
         </h2>
       </div>
-      <p class="text-gray-600 text-sm sm:text-base max-w-md leading-relaxed">
+      <p class="reveal text-gray-600 text-sm sm:text-base max-w-md leading-relaxed" style="transition-delay: 200ms;">
         Una propuesta integral para que trabajes tu cuerpo, tu salud y tu bienestar con profesionales capacitados.
       </p>
     </div>
@@ -76,7 +83,8 @@ const services = [
       {services.map((service) => (
         <a 
           href={service.href}
-          class={`group relative h-80 rounded-2xl overflow-hidden bg-gray-900 border border-gray-200 hover:border-[#639A2B] transition-all duration-300 shadow-xl flex flex-col justify-end p-6 ${service.tabletSpan} ${service.desktopSpan}`}
+          class={`reveal group relative h-80 rounded-2xl overflow-hidden bg-gray-900 border border-gray-200 hover:border-[#639A2B] transition-all duration-300 shadow-xl flex flex-col justify-end p-6 ${service.tabletSpan} ${service.desktopSpan}`}
+          style={`transition-delay: ${service.delay};`}
         >
           <!-- Imagen de fondo con zoom suave al hacer hover -->
           <div 

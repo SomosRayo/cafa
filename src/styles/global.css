@@ -33,3 +33,15 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out forwards;
 }
+
+/* Animación base para aparecer desde abajo */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}

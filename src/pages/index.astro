@@ -21,28 +21,28 @@ import FacilitiesSection from '../components/FacilitiesSection.astro';
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
       <div class="max-w-3xl animate-fade-in">
         
-        <!-- Badge superior -->
-        <span class="inline-block text-[#639A2B] font-bold text-xs uppercase tracking-widest mb-4 bg-[#639A2B]/10 px-3 py-1 rounded-md border border-[#639A2B]/20">
-          Gimnasio en Adrogué
-        </span>
+<!-- Badge superior con clase reveal active para que aparezca de entrada -->
+<span class="reveal active inline-block text-[#639A2B] font-bold text-xs uppercase tracking-widest mb-4 bg-[#639A2B]/10 px-3 py-1 rounded-md border border-[#639A2B]/20">
+  Gimnasio en Adrogué
+</span>
 
-        <!-- Título Principal Impactante -->
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-tight mb-6 font-heading">
-          UN GIMNASIO <br />
-          <span class="relative inline-block">
-            <span class="absolute left-0 top-1/2 w-full h-1.5 bg-[#639A2B] -rotate-2 transform"></span>
-            TÍPICO
-          </span> DONDE <br />
-          <span class="text-[#639A2B]">NO SOS UNO MÁS.</span>
-        </h1>
+<!-- Título Principal Impactante -->
+<h1 class="reveal active text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-tight mb-6 font-heading" style="transition-delay: 200ms;">
+  UN GIMNASIO <br />
+  <span class="relative inline-block">
+    <span class="absolute left-0 top-1/2 w-full h-1.5 bg-[#639A2B] -rotate-2 transform"></span>
+    TÍPICO
+  </span> DONDE <br />
+  <span class="text-[#639A2B]">NO SOS UNO MÁS.</span>
+</h1>
 
-        <!-- Subtítulo -->
-        <p class="text-lg sm:text-xl text-gray-300 font-light mb-8 max-w-xl leading-relaxed">
-          Entrenamiento personalizado, grupos reducidos y un ambiente donde te sentís parte. Y sin contratos de meses ni ataduras, acá pagas por mes.
-        </p>
+<!-- Subtítulo -->
+<p class="reveal active text-lg sm:text-xl text-gray-300 font-light mb-8 max-w-xl leading-relaxed" style="transition-delay: 400ms;">
+  Entrenamiento personalizado, grupos reducidos y un ambiente donde te sentís parte. Y sin contratos de meses ni ataduras, acá pagas por mes.
+</p>
 
-        <!-- Botones de Acción del Hero -->
-        <div class="flex flex-wrap gap-4 items-center">
+<!-- Botones de Acción del Hero -->
+        <div class="reveal flex flex-wrap gap-4 items-center" style="transition-delay: 2000ms;">
           <a 
             href="https://wa.me/5491144372491?text=Hola!%20Quiero%20probar%20una%20clase%20en%20CAFA" 
             target="_blank" 
@@ -58,40 +58,44 @@ import FacilitiesSection from '../components/FacilitiesSection.astro';
     </div>
   </section>
 
-  <!-- SECCIÓN DE DIFERENCIALES / BENEFICIOS -->
+<!-- SECCIÓN DE DIFERENCIALES / BENEFICIOS -->
   <section class="py-20 bg-[#121216] border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
+      <!-- Textos superiores que aparecen al scrollear -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-        <div>
+        <div class="reveal">
           <span class="text-xs uppercase tracking-widest text-[#639A2B] font-bold block mb-2">La Diferencia</span>
           <h2 class="text-3xl sm:text-4xl font-black text-white font-heading">
             Más que entrenar, <br />es estar acompañado.
           </h2>
         </div>
-        <div>
+        <div class="reveal" style="transition-delay: 200ms;">
           <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
             Acá no sos un número. Te conocemos, te acompañamos y te ayudamos a alcanzar tus objetivos, sin importar tu nivel o experiencia previa.
           </p>
         </div>
       </div>
 
-      <!-- 3 Tarjetas de Beneficios -->
+      <!-- 3 Tarjetas de Beneficios (Aparecen de a una por vez de forma escalonada) -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <div class="bg-[#09090b] p-8 rounded-2xl border border-white/5 hover:border-[#639A2B]/30 transition-colors">
+        <!-- Tarjeta 01 -->
+        <div class="reveal bg-[#09090b] p-8 rounded-2xl border border-white/5 hover:border-[#639A2B]/30 transition-colors" style="transition-delay: 100ms;">
           <div class="text-[#639A2B] mb-4 text-2xl font-bold">01</div>
           <h3 class="text-white font-bold text-lg mb-2 uppercase font-heading">Atención personalizada</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Profesores que te conocen y te guían en todo el proceso de entrenamiento.</p>
         </div>
 
-        <div class="bg-[#09090b] p-8 rounded-2xl border border-white/5 hover:border-[#639A2B]/30 transition-colors">
+        <!-- Tarjeta 02 -->
+        <div class="reveal bg-[#09090b] p-8 rounded-2xl border border-white/5 hover:border-[#639A2B]/30 transition-colors" style="transition-delay: 250ms;">
           <div class="text-[#639A2B] mb-4 text-2xl font-bold">02</div>
           <h3 class="text-white font-bold text-lg mb-2 uppercase font-heading">Grupos reducidos</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Más espacio, menos esperas y mejor calidad de supervisión en cada ejercicio.</p>
         </div>
 
-        <div class="bg-[#09090b] p-8 rounded-2xl border border-white/5 hover:border-[#639A2B]/30 transition-colors">
+        <!-- Tarjeta 03 -->
+        <div class="reveal bg-[#09090b] p-8 rounded-2xl border border-white/5 hover:border-[#639A2B]/30 transition-colors" style="transition-delay: 400ms;">
           <div class="text-[#639A2B] mb-4 text-2xl font-bold">03</div>
           <h3 class="text-white font-bold text-lg mb-2 uppercase font-heading">Ambiente cercano</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Una comunidad que te motiva a dar lo mejor de vos día tras día.</p>
