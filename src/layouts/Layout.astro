@@ -49,55 +49,58 @@ const {
       </svg>
     </button>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // 1. Lógica para las animaciones Reveal al scrollear
-        const revealElements = document.querySelectorAll('.reveal');
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // 1. Lógica para las animaciones Reveal
+    const revealElements = document.querySelectorAll('.reveal');
 
-        const observerOptions = {
-          root: null,
-          rootMargin: '0px 0px -50px 0px',
-          threshold: 0.05
-        };
+    const observerOptions = {
+      root: null,
+      rootMargin: '100px 0px 0px 0px', // Detecta los elementos 100px antes de que entren a la pantalla
+      threshold: 0.01
+    };
 
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('active');
-            }
-          });
-        }, observerOptions);
-
-        revealElements.forEach(el => {
-          observer.observe(el);
-          
-          // Fallback de seguridad por si ya está visible al cargar
-          const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight) {
-            el.classList.add('active');
-          }
-        });
-
-        // 2. Lógica para el Botón Volver Arriba
-        const backToTopButton = document.getElementById('back-to-top');
-
-        window.addEventListener('scroll', () => {
-          if (window.scrollY > 300) {
-            backToTopButton?.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-            backToTopButton?.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
-          } else {
-            backToTopButton?.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-            backToTopButton?.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
-          }
-        });
-
-        backToTopButton?.addEventListener('click', () => {
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
-        });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
       });
-    </script>
+    }, observerOptions);
+
+    revealElements.forEach(el => {
+      observer.observe(el);
+      
+      // Fallback para activar elementos visibles en pantallas de PC o tablets
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= (window.innerHeight || document.documentElement.clientHeight) + 100) {
+        el.classList.add('active');
+      }
+    });
+
+    // 2. Lógica para el Botón Volver Arriba
+    const backToTopButton = document.getElementById('back-to-top');
+
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        backToTopButton?.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+        backToTopButton?.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      } else {
+        backToTopButton?.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+        backToTopButton?.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Comprobación inicial
+
+    backToTopButton?.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
   </body>
 </html>
