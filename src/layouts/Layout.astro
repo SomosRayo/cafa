@@ -50,12 +50,13 @@ const {
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // 1. Activar inmediatamente los elementos que están en el Hero al cargar
-    // (Buscamos los que tengan 'reveal' y estén dentro de la primera pantalla)
+    // Función para activar elementos visibles
+    const revealElements = document.querySelectorAll('.reveal');
+
     const observerOptions = {
       root: null,
-      rootMargin: '0px',
-      threshold: 0.1 // Se activa cuando el 10% del elemento es visible
+      rootMargin: '0px 0px -50px 0px', // Se activa un poco antes de llegar al elemento
+      threshold: 0.05
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -66,8 +67,14 @@ const {
       });
     }, observerOptions);
 
-    document.querySelectorAll('.reveal').forEach(el => {
+    revealElements.forEach(el => {
       observer.observe(el);
+      
+      // Fallback de seguridad: si el elemento ya está dentro de la pantalla al cargar, lo activamos de una
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add('active');
+      }
     });
   });
 </script>
