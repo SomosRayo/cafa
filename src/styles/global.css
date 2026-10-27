@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/* Variables y Colores C.A.F.A. */
+:root {
+  --cafa-blue: #17239C;
+  --cafa-green: #639A2B;
+  --cafa-green-hover: #7cb83c;
+  --bg-dark: #09090b;
+  --bg-card: #121216;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: #f4f4f5;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+/* Animaciones suaves */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}

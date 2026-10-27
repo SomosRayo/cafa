@@ -1,0 +1,150 @@
+---
+const testimonials = [
+  {
+    name: "Agustín",
+    text: "El mejor gimnasio de Adrogue sin ninguna duda!! Por el ambiente, por lo personalizado, porque entrenas con un grupo donde hay buena onda y termina siendo mucho más llevadero!! Prefiero cafa mil veces antes que un gimnasio con mil máquinas o 10 cintas para correr pero que los profesores te den la rutina y chau.. para personas como yo, que no disfruto del gimnasio y lo hago por salud y bienestar, sin dudas es mil veces mejor un lugar así!! Yo entreno para futbol (funcional o similar) y es clave!!",
+  },
+  {
+    name: "Dante",
+    text: "Hace casi 10 años que voy a este gimnasio y la verdad que siempre me sentí muy cómodo. Más allá del entrenamiento, destaco muchísimo el ambiente y el trato de los profes, porque realmente se interesan por las personas y por cómo uno está. Las instalaciones están siempre muy bien cuidadas. Después de tantos años, puedo decir que más que un gimnasio, es un lugar donde uno se siente parte.",
+  },
+  {
+    name: "Rodrigo",
+    text: "Muy buen lugar para entrenar, con un ambiente súper agradable y un equipo siempre atento y con muy buena onda. Da gusto venir y entrenar así. ¡Súper recomendable!",
+  },
+  {
+    name: "Teresita",
+    text: "Hace casi 14 años que comencé a entrenar en CAFA !! Para mí fue milagroso !! Revertí la osteopeña que comenzaba a insinuarse !!! Tengo 71 años !! Entreno a la par de muchos jóvenes, que podrían ser mis hijos, me alientan, me estimulan. Los profes Luli y Nico, son lo mejor que pudo acompañarme en mi proceso. ¡Gracias por sumar Vida a mi Vida!",
+  },
+  {
+    name: "Juan",
+    text: "No me gusta entrenar, probé muchos gimnasios y lugares hasta que encontré CAFA! Está buenísimo porque los profes te corrigen y se preocupan para que mejores. El ambiente es muy relajado y te adaptan todo para que sea personalizado. Hace muchos años que voy, recomiendo!!!!",
+  }
+];
+---
+
+<!-- SECCIÓN COMUNIDAD CON FONDO BLANCO Y DISEÑO DE 3 COLUMNAS -->
+<section class="py-24 bg-white text-gray-900 border-t border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Grid de 3 Columnas (Imagen | Texto + Botón | Reseñas) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      
+      <!-- 1. Columna Imagen (4 columnas en Desktop) -->
+      <div class="lg:col-span-4">
+        <div class="relative h-96 lg:h-[420px] rounded-2xl overflow-hidden bg-gray-100 border border-gray-200 shadow-xl flex items-center justify-center">
+          <div 
+            class="absolute inset-0 bg-cover bg-center opacity-90"
+            style="background-image: url('/images/comunidad-cafa.jpg');"
+          ></div>
+
+        </div>
+      </div>
+
+      <!-- 2. Columna Texto Central (4 columnas en Desktop) -->
+      <div class="lg:col-span-4 space-y-6 lg:px-4">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-[#639A2B] font-bold block mb-2">Nuestra comunidad</span>
+          <h2 class="text-3xl sm:text-4xl font-black font-heading tracking-tight text-[#17239C] leading-none">
+            NO ES SOLO <br /><span class="text-gray-900">VENIR A ENTRENAR</span>
+          </h2>
+        </div>
+        
+        <p class="text-gray-600 text-base leading-relaxed">
+          Es compartir, motivarse y formar parte de algo más. La buena onda también se entrena.
+        </p>
+        
+        <!-- Botón Ver Reseñas en Google (Azul CAFA) -->
+        <div class="pt-2">
+          <a 
+            href="https://www.google.com/search?q=cafa+adrogue&oq=cafa&gs_lcrp=EgZjaHJvbWUqCQgAECMYJxjjAjIJCAAQIxgnGOMCMg8IARAuGCcYrwEYxwEYjgUyBggCEEUYOTIVCAMQLhhDGMcBGLEDGNEDGIAEGIoFMgwIBBAAGEMYgAQYigUyBggFEEUYQTIGCAYQRRg8MgYIBxBFGDzSAQgyMjYzajBqN6gCALACAA&sourceid=chrome&source=chrome.ob&ie=UTF-8" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-[#17239C] hover:bg-[#121c7a] text-white px-6 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all shadow-lg"
+          >
+            <span>Ver testimonios</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Columna Reseñas Manuales (4 columnas en Desktop) -->
+      <div class="lg:col-span-4">
+        <div class="bg-gray-900 text-white border border-gray-800 rounded-3xl p-8 shadow-2xl relative flex flex-col justify-between min-h-[420px]">
+          <div>
+            <!-- Comillas decorativas y Estrellas -->
+            <div class="flex items-center justify-between mb-6">
+              <span class="text-3xl text-[#639A2B] font-serif leading-none">“</span>
+              <div class="flex text-yellow-400 gap-1">
+                {[...Array(5)].map(() => (
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                ))}
+              </div>
+            </div>
+
+            <!-- Contenedor dinámico de Testimonios -->
+            <div id="testimonial-container" class="space-y-4">
+              {testimonials.map((t, index) => (
+                <div class={`testimonial-slide ${index === 0 ? 'block' : 'hidden'} space-y-4 transition-all duration-300`}>
+                  <p class="text-gray-300 text-sm sm:text-base italic font-normal leading-relaxed line-clamp-6">
+                    "{t.text}"
+                  </p>
+                  <div class="pt-4 border-t border-white/10">
+                    <h4 class="font-bold text-white font-heading uppercase text-sm tracking-wider">— {t.name}</h4>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Paginador inferior y Flechitas de navegación -->
+          <div class="flex items-center justify-between pt-6 mt-6 border-t border-white/10">
+            <span id="slide-counter" class="text-xs font-bold text-gray-400">1 / {testimonials.length}</span>
+            <div class="flex gap-2">
+              <button id="prev-btn" aria-label="Anterior testimonio" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#639A2B] text-white transition-colors flex items-center justify-center shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+              </button>
+              <button id="next-btn" aria-label="Siguiente testimonio" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#639A2B] text-white transition-colors flex items-center justify-center shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Script para la navegación manual del carrusel -->
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const counter = document.getElementById('slide-counter');
+  const totalSlides = slides.length;
+
+  function showSlide(index: number) {
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.classList.remove('hidden');
+      } else {
+        slide.classList.add('hidden');
+      }
+    });
+    if (counter) {
+      counter.textContent = `${index + 1} / ${totalSlides}`;
+    }
+  }
+
+  document.getElementById('next-btn')?.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    showSlide(currentIndex);
+  });
+
+  document.getElementById('prev-btn')?.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    showSlide(currentIndex);
+  });
+</script>
