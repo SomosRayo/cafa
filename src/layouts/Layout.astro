@@ -37,46 +37,67 @@ const {
     <Header />
     <slot />
     <Footer />
+
     <!-- Botón Volver Arriba -->
-<button 
-  id="back-to-top" 
-  aria-label="Volver arriba"
-  class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-[#17239C] hover:bg-[#639A2B] text-white shadow-2xl flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 transform translate-y-4"
->
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7" />
-  </svg>
-</button>
+    <button 
+      id="back-to-top" 
+      aria-label="Volver arriba"
+      class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-[#17239C] hover:bg-[#639A2B] text-white shadow-2xl flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 transform translate-y-4"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7" />
+      </svg>
+    </button>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Función para activar elementos visibles
-    const revealElements = document.querySelectorAll('.reveal');
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Lógica para las animaciones Reveal al scrollear
+        const revealElements = document.querySelectorAll('.reveal');
 
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px 0px -50px 0px', // Se activa un poco antes de llegar al elemento
-      threshold: 0.05
-    };
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px 0px -50px 0px',
+          threshold: 0.05
+        };
 
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+            }
+          });
+        }, observerOptions);
+
+        revealElements.forEach(el => {
+          observer.observe(el);
+          
+          // Fallback de seguridad por si ya está visible al cargar
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight) {
+            el.classList.add('active');
+          }
+        });
+
+        // 2. Lógica para el Botón Volver Arriba
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+            backToTopButton?.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+            backToTopButton?.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+          } else {
+            backToTopButton?.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+            backToTopButton?.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+          }
+        });
+
+        backToTopButton?.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
       });
-    }, observerOptions);
-
-    revealElements.forEach(el => {
-      observer.observe(el);
-      
-      // Fallback de seguridad: si el elemento ya está dentro de la pantalla al cargar, lo activamos de una
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight) {
-        el.classList.add('active');
-      }
-    });
-  });
-</script>
+    </script>
   </body>
 </html>
