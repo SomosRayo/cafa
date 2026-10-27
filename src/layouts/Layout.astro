@@ -49,22 +49,25 @@ const {
 </button>
 
 <script>
-  const backToTopButton = document.getElementById('back-to-top');
+  document.addEventListener("DOMContentLoaded", () => {
+    // 1. Activar inmediatamente los elementos que están en el Hero al cargar
+    // (Buscamos los que tengan 'reveal' y estén dentro de la primera pantalla)
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1 // Se activa cuando el 10% del elemento es visible
+    };
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      backToTopButton?.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-      backToTopButton?.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
-    } else {
-      backToTopButton?.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-      backToTopButton?.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
-    }
-  });
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
 
-  backToTopButton?.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+    document.querySelectorAll('.reveal').forEach(el => {
+      observer.observe(el);
     });
   });
 </script>
