@@ -29,7 +29,7 @@ const encodedMessage = encodeURIComponent(whatsappMessage);
 ---
 
 <Layout title={title} description={description}>
-  <!-- 1. HERO DE LA PÁGINA INTERNA (Alineado a la izquierda) -->
+<!-- 1. HERO DE LA PÁGINA INTERNA (Con efecto de entrada reveal) -->
   <section class="relative min-h-[70vh] flex items-center bg-gray-950 text-white pt-28 pb-20 overflow-hidden">
     <!-- Imagen de fondo con overlay oscuro -->
     <div 
@@ -39,18 +39,18 @@ const encodedMessage = encodeURIComponent(whatsappMessage);
       <div class="absolute inset-0 bg-gradient-to-r from-[#09090b] via-[#09090b]/80 to-transparent"></div>
     </div>
 
-    <!-- Contenido del Hero alineado a la izquierda -->
+    <!-- Contenido del Hero con clases reveal -->
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <div class="max-w-3xl">
-        <h1 class="reveal active text-3xl sm:text-5xl lg:text-6xl font-black text-white font-heading uppercase tracking-tight mb-6 leading-tight" style="transition-delay: 100ms;">
+        <h1 class="reveal text-3xl sm:text-5xl lg:text-6xl font-black text-white font-heading uppercase tracking-tight mb-6 leading-tight" style="transition-delay: 100ms;">
           {h1}
         </h1>
 
-        <p class="reveal active text-gray-300 text-base sm:text-xl font-light leading-relaxed mb-8" style="transition-delay: 200ms;">
+        <p class="reveal text-gray-300 text-base sm:text-xl font-light leading-relaxed mb-8" style="transition-delay: 250ms;">
           {introText}
         </p>
 
-        <div class="reveal active flex justify-start" style="transition-delay: 300ms;">
+        <div class="reveal flex justify-start" style="transition-delay: 400ms;">
           <a 
             href={`https://wa.me/5491144372491?text=${encodedMessage}`}
             target="_blank" 
