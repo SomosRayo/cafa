@@ -9,6 +9,7 @@ interface Props {
   h2: string;             // Título del bloque de contenido
   introText: string;      // Bajada del Hero
   whatsappMessage?: string; // Texto personalizado para WhatsApp
+  ctaText?: string; // Nuevo parámetro opcional
   videos?: string[];      // Lista de URLs de videos (.mp4)
   images?: string[];      // 3 imágenes para la galería inferior
 }
@@ -21,6 +22,7 @@ const {
   h2,
   introText,
   whatsappMessage = "Hola! Quiero probar una clase gratis",
+  ctaText = "¡QUIERO PROBAR UNA CLASE GRATIS! →", // Valor por defecto global
   videos = [],
   images = []
 } = Astro.props;
@@ -57,7 +59,7 @@ const encodedMessage = encodeURIComponent(whatsappMessage);
             rel="noopener noreferrer"
             class="bg-[#639A2B] hover:bg-[#7cb83c] text-white font-bold px-8 py-4 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition-all shadow-lg shadow-[#639A2B]/20 flex items-center gap-2 group"
           >
-            <span>¡Quiero probar una clase GRATIS!</span>
+            <span>{ctaText}</span>
             <span class="transform group-hover:translate-x-1 transition-transform">→</span>
           </a>
         </div>
