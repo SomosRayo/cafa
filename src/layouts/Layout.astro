@@ -22,9 +22,7 @@ const siteUrl = "https://cafa-adrogue.vercel.app";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-    <meta name="robots" content="noindex, nofollow">
-    
+  
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="geo.region" content="AR-B" />
@@ -36,49 +34,130 @@ const siteUrl = "https://cafa-adrogue.vercel.app";
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
 
     <!-- SCHEMA LOCAL BUSINESS DE C.A.F.A. -->
-    <script type="application/ld+json" is:inline>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ExerciseGym",
+  "@id": "https://www.cafaadrogue.com.ar/#localbusiness",
+  "name": "C.A.F.A.",
+  "url": "https://www.cafaadrogue.com.ar/",
+  "description": "¡Somos más que un Gimnasio! No te damos una rutina y listo.. En C.A.F.A. ofrecemos un espacio integral de entrenamiento y bienestar adaptado a todas las etapas de la vida. Contamos con clases de entrenamiento funcional, gimnasia adaptada para adultos mayores y programas kids diseñados para niños y niñas de 6 a 12 años. Si buscas mejorar tu rendimiento deportivo, tenemos entrenamiento especializado para fútbol. Además realizamos evaluaciones de antropometría para optimizar tu composición corporal. También cuidamos tu cuerpo y mente con clases de Yoga para todos los niveles y sesiones de masajes descontracturantes de cuerpo completo. Vení a entrenar con instructores capacitados, en un ambiente seguro y motivador.",
+  "logo": "https://www.cafaadrogue.com.ar/images/cafa-logo-blanco-fondo-transparente.png",
+  "image": [
+    "https://www.cafaadrogue.com.ar/images/espacio-1.jpg",
+    "https://www.cafaadrogue.com.ar/images/espacio-2.jpg",
+    "https://www.cafaadrogue.com.ar/images/espacio-3.jpg",
+    "https://www.cafaadrogue.com.ar/images/cafa-gimnasio-adrogu%C3%A9.jpg"
+  ],
+  "telephone": "+5491144372491",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Diag. Toll 1386",
+    "addressLocality": "Adrogué",
+    "addressRegion": "Provincia de Buenos Aires",
+    "postalCode": "B1846",
+    "addressCountry": "AR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -34.801652,
+    "longitude": -58.384708
+  },
+  "hasMap": "https://www.google.com/maps/place/C.A.F.A./data=!4m2!3m1!1s0x95bcd3466f4bb6c7:0x336d658fb7a6049",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "07:00",
+      "closes": "21:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "11:00"
+    }
+  ],
+  "areaServed": [
+    { "@type": "City", "name": "Adrogué" },
+    { "@type": "AdministrativeArea", "name": "Almirante Brown" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Actividades",
+    "itemListElement": [
       {
-        "@context": "https://schema.org",
-        "@type": "SportsActivityLocation",
-        "name": "C.A.F.A. Adrogué",
-        "image": "https://cafa-adrogue.vercel.app/images/cafa-logo-blanco-fondo-transparente.png",
-        "@id": "https://cafa-adrogue.vercel.app/#localbusiness",
-        "url": "https://cafa-adrogue.vercel.app",
-        "telephone": "+541144372491",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Diag. Toll 1386",
-          "addressLocality": "Adrogué",
-          "addressRegion": "Provincia de Buenos Aires",
-          "postalCode": "B1846",
-          "addressCountry": "AR"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": -34.801678614052015,
-          "longitude": -58.38478323003622
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "07:00",
-            "closes": "21:30"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Saturday",
-            "opens": "09:00",
-            "closes": "11:00"
-          }
-        ],
-        "priceRange": "$$",
-        "sameAs": [
-          "https://www.instagram.com/cafaadrogue/",
-          "https://www.facebook.com/cafaadrogue/"
-        ]
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Funcional y gimnasio",
+          "description": "Clases de entrenamiento funcional.",
+          "url": "https://www.cafaadrogue.com.ar/funcional-gimnasio"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Entrenamiento para fútbol",
+          "description": "Entrenamiento especializado para mejorar el rendimiento deportivo en fútbol.",
+          "url": "https://www.cafaadrogue.com.ar/entrenamiento-futbol"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Gimnasia para adultos mayores",
+          "description": "Gimnasia adaptada para adultos mayores.",
+          "url": "https://www.cafaadrogue.com.ar/adultos-mayores"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Entrenamiento infantil (Kids)",
+          "description": "Programa de entrenamiento para niños y niñas de 6 a 12 años.",
+          "url": "https://www.cafaadrogue.com.ar/kids"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Yoga",
+          "description": "Clases de Yoga Ashtanga.",
+          "url": "https://www.cafaadrogue.com.ar/yoga"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Masajes descontracturantes",
+          "description": "Sesiones de masajes descontracturantes de cuerpo completo.",
+          "url": "https://www.cafaadrogue.com.ar/masajes"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Antropometría",
+          "description": "Evaluaciones de antropometría para optimizar la composición corporal.",
+          "url": "https://www.cafaadrogue.com.ar/antropometria"
+        }
       }
-    </script>
+    ]
+  },
+  "sameAs": [
+    "https://www.instagram.com/cafaadrogue/",
+    "https://www.facebook.com/cafaadrogue/",
+    "https://www.google.com/maps/place/C.A.F.A./data=!4m2!3m1!1s0x95bcd3466f4bb6c7:0x336d658fb7a6049"
+  ]
+}
+</script>
   </head>
   <body>
     <Header />
