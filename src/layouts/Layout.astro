@@ -14,6 +14,10 @@ const {
 } = Astro.props;
 
 const siteUrl = "https://cafa-adrogue.vercel.app";
+
+// src/layouts/Layout.astro
+const hostname = Astro.url.hostname;
+const isVercelDomain = hostname.endsWith('.vercel.app');
 ---
 
 <!doctype html>
@@ -27,6 +31,8 @@ const siteUrl = "https://cafa-adrogue.vercel.app";
     <meta name="description" content={description} />
     <meta name="geo.region" content="AR-B" />
     <meta name="geo.placename" content="Adrogué" />
+
+    {isVercelDomain && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
