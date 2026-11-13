@@ -13,11 +13,12 @@ const {
   description = "C.A.F.A. Adrogué: Gimnasio y centro de entrenamiento personalizado. Funcional, preparación física de fútbol, yoga, adultos mayores, kids, masajes y antropometría."
 } = Astro.props;
 
-const siteUrl = "https://cafa-adrogue.vercel.app";
-
-// src/layouts/Layout.astro
+// Mantenemos la detección de dominio de Vercel para el noindex automático
 const hostname = Astro.url.hostname;
 const isVercelDomain = hostname.endsWith('.vercel.app');
+
+// Genera la URL canónica oficial usando el dominio de astro.config.mjs (https://www.cafaadrogue.com.ar)
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -26,6 +27,9 @@ const isVercelDomain = hostname.endsWith('.vercel.app');
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Etiqueta Canonical oficial para evitar páginas duplicadas en Google -->
+    <link rel="canonical" href={canonicalURL} />
   
     <title>{title}</title>
     <meta name="description" content={description} />
